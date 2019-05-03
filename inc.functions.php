@@ -1,5 +1,17 @@
 <?php
 
+function get_url( $path, $query = [] ) {
+	$query = $query ? '?' . http_build_query($query) : '';
+	$path = $path ? $path . '.php' : basename($_SERVER['SCRIPT_NAME']);
+	return $path . $query;
+}
+
+function do_redirect( $path = null, $query = [] ) {
+	$url = get_url($path, $query);
+	header('Location: ' . $url);
+	exit;
+}
+
 function html_options( $options, $selected = null, $empty = '', $datalist = false ) {
 	$selected = (array) $selected;
 
