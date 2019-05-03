@@ -1,0 +1,22 @@
+{
+    "name": "rdx/ed",
+    "type": "project",
+    "require": {
+        "rdx/db": "^1.14",
+        "guzzlehttp/guzzle": "^6.3",
+        "rdx/js-dom": "^1.1"
+    },
+    "autoload": {
+        "files": ["inc.functions.php"],
+        "psr-4": {
+            "rdx\\ed\\": "src/"
+        }
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Rudie Dirkx",
+            "email": "github@hotblocks.nl"
+        }
+    ]
+}
