@@ -21,6 +21,10 @@ label {
 	display: inline-block;
 	margin-right: .5em;
 }
+
+li {
+	margin-bottom: .5em;
+}
 </style>
 
 <p class="filters">
