@@ -19,7 +19,7 @@ class Client {
 	}
 
 	public function getArticleLinks() {
-		$rsp = $this->guzzle->get('https://www.ed.nl/accept?url=https://www.ed.nl/');
+		$rsp = $this->guzzle->get(ED_HOMEPAGE_URL);
 
 		$dom = Node::create((string) $rsp->getBody());
 
