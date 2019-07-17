@@ -6,8 +6,9 @@ require __DIR__ . '/inc.bootstrap.php';
 
 $hiddenCategories = $db->select_fields('categories', 'category', ['hide' => 1]) ?: ['x'];
 $checkedCategories = $db->select_fields('categories', 'category', ['checked' => 1]) ?: ['x'];
+$newTime = strtotime('-7 days');
 
-$articles = Article::all('category NOT IN (?) ORDER BY id DESC LIMIT 250', [$hiddenCategories]);
+$articles = Article::all('category NOT IN (?) AND saved_on > ? ORDER BY id DESC LIMIT 250', [$hiddenCategories, $newTime]);
 $categories = $db->select_fields('articles', 'category', 'category NOT IN (?) GROUP BY category', [$hiddenCategories]);
 
 $lastSync = $db->max('articles', 'saved_on');
