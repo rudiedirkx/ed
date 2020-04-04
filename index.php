@@ -16,6 +16,7 @@ $lastSync = $db->max('articles', 'saved_on');
 ?>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <meta charset="utf-8" />
+<meta name="referrer" content="no-referrer" />
 
 <style>
 label {
@@ -41,7 +42,7 @@ li {
 	<? foreach ($articles as $article): ?>
 		<li data-category="<?= html($article->category) ?>">
 			[<?= date('D H:i', $article->saved_on) ?>]
-			<a href="<?= html($article->url) ?>">
+			<a href="<?= html($article->url) ?>" rel="noreferrer">
 				[<?= html($article->category) ?>]
 				<?= html($article->title) ?>
 			</a>
