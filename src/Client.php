@@ -38,6 +38,7 @@ class Client {
 			// 'base_uri' => $this->base,
 			'handler' => $stack,
 			'cookies' => $this->cookies,
+			'headers' => ['User-agent' => ED_USER_AGENT],
 			'allow_redirects' => [
 				'track_redirects' => true,
 			] + RedirectMiddleware::$defaultSettings,
