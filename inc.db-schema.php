@@ -1,7 +1,7 @@
 <?php
 
 return [
-	'version' => 3,
+	'version' => 4,
 	'tables' => [
 		'articles' => [
 			'id' => ['pk' => true],
@@ -11,6 +11,7 @@ return [
 			'saved_on' => ['unsigned' => true, 'default' => 0],
 			'published_on' => ['unsigned' => true, 'default' => 0],
 			'updated_on' => ['unsigned' => true, 'default' => 0],
+			'read' => ['type' => 'int', 'default' => 0],
 		],
 		'categories' => [
 			'category' => ['unique' => true],
