@@ -22,6 +22,9 @@ $hidden = $db->select_fields('categories', 'category', ['hide' => 1]);
 $checked = $db->select_fields('categories', 'category', ['checked' => 1]);
 
 ?>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta charset="utf-8" />
+
 <style>
 label {
 	display: inline-block;

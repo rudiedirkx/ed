@@ -22,12 +22,23 @@ label {
 	margin-right: .5em;
 }
 
+ul {
+	padding-left: 2em;
+}
 li {
 	margin-bottom: .5em;
 }
 </style>
 
-<p><?= count($articles) ?> since <?= date('D Y-m-d H:i', $newTime) ?>:</p>
+<?php ob_start(); ?>
+<ul>
+	<li><?= date('D d M H:i', $lastSync) ?> - <?= date('D d M H:i', $newTime) ?></li>
+	<li><?= count($articles) ?> articles</li>
+	<li><a href="config.php">Config</a></li>
+</ul>
+<?php $meta = ob_get_contents(); ?>
+
+<hr>
 
 <ul>
 	<? foreach ($articles as $article): ?>
@@ -41,9 +52,9 @@ li {
 	<? endforeach ?>
 </ul>
 
-<p>Laatste sync: <kbd><?= date('Y-m-d H:i', $lastSync) ?></kbd></p>
+<hr>
 
-<p><a href="config.php">Config</a></p>
+<?= $meta ?>
 
 <details>
 	<summary>Queries (<?= count($db->queries) ?>)</summary>
