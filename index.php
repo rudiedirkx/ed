@@ -12,7 +12,7 @@ if ( $_SERVER['REQUEST_METHOD'] == 'POST' && isset($_REQUEST['toggle'], $_REQUES
 }
 
 $checkedCategories = $db->select_fields('categories', 'category', ['checked' => 1]) ?: ['x'];
-$newTime = strtotime('-7 days');
+$newTime = strtotime('-7 days -6 hours');
 
 $articles = Article::all('category IN (?) AND saved_on > ? ORDER BY id DESC LIMIT 500', [$checkedCategories, $newTime]);
 

@@ -23,7 +23,7 @@ class Client {
 
 		$dom = Node::create((string) $rsp->getBody());
 
-		$links = $dom->queryAll('.col--secondary .fjs-autoupdate-widget a');
+		$links = $dom->queryAll('.col--secondary .fjs-autoupdate-widget a[href*="~"]');
 		$links = array_map(function(Node $link) {
 			return new ArticleLink($link);
 		}, $links);
